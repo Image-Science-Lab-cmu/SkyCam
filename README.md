@@ -5,7 +5,7 @@
 [[Data]](https://drive.google.com/drive/folders/1RECMaobYrSYNmIRyL72Pahb0GvX4aCm3?usp=drive_link) 
 
 # Livestream of Skycam
-[(link)](https://imagesci.ece.cmu.edu/SkyCamLiveWebsite)
+[(link)](http://imagesci.ece.cmu.edu/SkyCamLiveWebsite/)
 
 
 
