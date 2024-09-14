@@ -1,4 +1,4 @@
-# A Catadioptric System for Long-Term Prediction of Solar Irradiance
+# Computational Imaging for Long-Term Prediction of Solar Irradiance
 [[Paper]]() [[Supplementary]]() 
 
 # Dataset
