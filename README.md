@@ -20,11 +20,11 @@
 
 # Livestream of Skycam
 <p align="left">
-  <a href="http://imagesci.ece.cmu.edu/SkyCamLiveWebsite/" target="_blank">(Link Here)</a> - We present
+  <a href="http://imagesci.ece.cmu.edu/SkyCamLiveWebsite/" target="_blank">(Link Here)</a> - We present a live snapshot of current cloud conditions updated every 30 seconds from our testbed. This site also provides associated GHI values.
 </p>
 
 
-# Getting Startetd
+# Code - Getting Startetd
 
 ```shell
 # Installation using using anaconda package management 
