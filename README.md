@@ -25,7 +25,7 @@
 
 
 # Code - Getting Startetd
-
+## Simulated Non-learning
 ```shell
 # Installation using using anaconda package management 
 conda env create -f environment.yml
