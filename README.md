@@ -26,11 +26,45 @@
 
 # Code - Getting Startetd
 ## Simulated Non-learning
+Non-learning based occlusion prediction using simulated dataset.
 ```shell
 # Installation using using anaconda package management 
 conda env create -f environment.yml
 conda activate SkyNet
 pip install -r requirements.txt
+```
+
+## Simulated Learning
+Learning based occlusion prediction using simulated dataset.
+```shell
+# Installation using using anaconda package management 
+conda env create -f environment.yml
+conda activate SkyNet
+pip install -r requirements.txt
+```
+
+## Real Learning
+Learning based GHI prediction using real datatset.
+```shell
+# Installation using using anaconda package management 
+conda env create -f environment.yml
+conda activate SkyNet
+pip install -r requirements.txt
+```
+
+# Thanks
+This project makes use of the MOMENT:
+* [MOMENT](https://github.com/moment-timeseries-foundation-model/moment) a family of open-source foundation models for general-purpose time-series analysis.
+
+# Citation
+If you use this project in your research please cite:
+```
+@INPROCEEDINGS{,
+  author={},
+  booktitle={}, 
+  title={}, 
+  year={},
+  }
 ```
 
 
