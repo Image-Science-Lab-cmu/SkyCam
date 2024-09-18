@@ -45,15 +45,18 @@ pip install -r requirements.txt
 ## Real Learning
 Learning based GHI prediction using real datatset.
 ```shell
-# Download the data
-https://drive.google.com/file/d/1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb/view?usp=sharing
-
 # Create the conda environment in python 3.11
 conda create --name SkyCam python=3.11
 # Activate environment
 conda activate SkyCam
 # Install MOMENT package
 pip install momentfm
+
+# Download the data
+pip install gdown
+gdown --folder --id 1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb
+# If you run into an inssue requesting permission, update gdown first, then re-run the above command:
+pip install --upgrade --no-cache-dir gdown
 
 ```
 Run the associated files
