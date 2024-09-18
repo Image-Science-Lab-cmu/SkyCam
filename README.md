@@ -54,9 +54,11 @@ pip install momentfm
 
 # Download the data
 pip install gdown
-gdown --folder --id 1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb
+gdown 1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb
 # If you run into an inssue requesting permission, update gdown first, then re-run the above command:
 pip install --upgrade --no-cache-dir gdown
+# Unzip
+unzip Data.zip 
 
 ```
 Run the associated files
