@@ -45,7 +45,7 @@ TRAIN_WD = 200
 TEST_WID = 60
 NUM_DAYS = 28
 NUM_SLICES = 800
-INPUTS_PATH = f'./train2_day_synthetic_{mirror}_{TRAIN_WD}_{TEST_WID}_{NUM_SLICES}.h5' #Train/test is spererated by day
+INPUTS_PATH = f'../Simulated_Data/train2_day_synthetic_{mirror}_{TRAIN_WD}_{TEST_WID}_{NUM_SLICES}.h5' #Train/test is spererated by day
 
 
 # Models
