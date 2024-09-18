@@ -59,10 +59,10 @@ class Pretraining():
             )
 
         if Half_img:
-            from Real_learning.dataloader import DatasetFromFolder
-
-        if not Half_img:
             from dataloader import DatasetFromFolder
+
+        # if not Half_img:
+        #     from dataloader import DatasetFromFolder
         
         self.train_dataloader = DataLoader(DatasetFromFolder(self.args.INPUTS_PATH), batch_size=self.args.train_batch_size, shuffle=True, num_workers=1)
         self.test_dataloader =  DataLoader(DatasetFromFolder(self.args.VALID_PATH), batch_size=self.args.val_batch_size, shuffle=False, num_workers=1)
