@@ -18,8 +18,7 @@
 </h4>
 
 
-# Livestream of Skycam
-<p align="left">
+# Livestream of Skycam ⚠️ UNDER CONSTRUCTION ⚠️
   <a href="http://imagesci.ece.cmu.edu/SkyCamLiveWebsite/" target="_blank">(Link Here)</a> - We present a live snapshot of current cloud conditions updated every 30 seconds from our testbed. This site also provides associated GHI values.
 </p>
 
@@ -46,11 +45,33 @@ pip install -r requirements.txt
 ## Real Learning
 Learning based GHI prediction using real datatset.
 ```shell
-# Installation using using anaconda package management 
-conda env create -f environment.yml
-conda activate SkyNet
-pip install -r requirements.txt
+# Download the data
+https://drive.google.com/file/d/1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb/view?usp=sharing
+
+# Create the conda environment in python 3.11
+conda create --name SkyCam python=3.11
+# Install MOMENT package
+pip install momentfm
+# Activate environment
+conda activate SkyCam
 ```
+Run the associated files
+```shell
+# 1. Pre-Train Hyperboloidal
+~/anaconda3/envs/SkyCam/bin/python3 -u ./pre-train_img.py --config ./configs/pre-train_img_para.yaml --gpu_id 0 --Half_img
+
+# 2. Pre-Train Hemispherical
+~/anaconda3/envs/myenv/bin/python3 -u ./pre-train_img.py --config ./configs/pre-train_img_sphere.yaml --gpu_id 0 --Half_img
+
+# 3. Fine-Tune Hyperboloidal
+~/anaconda3/envs/myenv/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_para.yaml --Half_img
+
+# 4. Fine-Tune Hyperboloidal
+~/anaconda3/envs/myenv/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_sphere.yaml --Half_img
+```
+* After Pre-Training, the results will be saved in the './results' folder with the run name given by wandb.
+* To fine-tune using that pre-trained run, in the config file "./config/finetune-*" change the value for "pretraining_run_name" to the run name which is based on the name given by wandb.
+
 
 # Thanks
 This project makes use of the MOMENT:
