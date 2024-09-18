@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+# filename: preTrain_moment.ssh
+#
+
+
+#SBATCH --gres gpu:4g.40gb:1
+#SBATCH --output=out_moment_finetineForecast_Img_para.out
+
+
+
+CUDA_LAUNCH_BLOCKING=1
+apptainer run --nv /home/apptainer_images/pytorch_23.11-py3.sif ~/anaconda3/envs/myenv/bin/python3 -u /home/ljulian/SkyCam_Final/moment/finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config /home/ljulian/SkyCam_Final/moment/configs/finetune-forecast_img_para.yaml --Half_img
+
+
+
+#
+echo 'Your job is running on node(s):'
+echo $SLURM_JOB_NODELIST
+echo 'Cores per node:'
+echo $SLURM_TASKS_PER_NODE

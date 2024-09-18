@@ -1,0 +1,2 @@
+apptainer run --nv /home/apptainer_images/pytorch_23.11-py3.sif ~/anaconda3/envs/myenv/bin/python3 -u /home/ljulian/SkyCam_Final/moment/pre-train_img.py --config /home/ljulian/SkyCam_Final/moment/configs/pre-train_img_para.yaml --gpu_id 0 --Half_img
+

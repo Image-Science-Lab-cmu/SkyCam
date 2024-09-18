@@ -1,0 +1,62 @@
+# Data loader parameters
+task_name: "long-horizon-forecasting"
+model_name: "MOMENT_FineTuning"
+train_batch_size : 64 # 1024 2048 3072 4096
+val_batch_size: 128 # 1024 2048 3072 4096 
+shuffle: True
+num_workers: 5
+pin_memory: True
+seq_len : 512
+scale : True 
+train_ratio : 0.7
+val_ratio : 0.1
+test_ratio : 0.2
+random_seed : 13
+upsampling_pad_direction : "backward"
+upsampling_type : "pad" # pad by default
+downsampling_type : "interpolate"
+pad_mode : "edge" # constant by default
+pad_constant_values : null
+
+# Data parameters
+output_type: 'univariate' # 'multivariate' 'univariate'
+
+# Experiment parameters
+pretraining_run_name: "fiery-firefly-179" # "fearless-planet-52"
+pretraining_opt_steps: null
+pct_start: 0.3
+forecast_horizon: 60
+finetuning_mode: "linear-probing" # "linear-probing" "end-to-end"
+dataset_names: '/TimeseriesDatasets/forecasting/autoformer/ETTh1.csv'
+debug: False
+checkpoint_interval: 100
+loss_type: "mse" # MSE by default
+
+weight_decay: 0.05
+max_opt_steps: 50000
+max_epoch: 100
+warmup_steps: 1000
+warmup_lr: 0.000001 # 1e-5
+init_lr: 0.00001 # 1e-4
+min_lr: 0.000001 # 1e-5
+use_amp: True
+lr_scheduler_type: 'linearwarmupcosinelr' #'linearwarmupcosinelr' #'linearwarmupcosinelr' 'onecyclelr'
+optimizer_name : "AdamW"
+
+# Model parameters
+model_name: "MOMENT"
+seq_len: 512
+patch_len: 8
+patch_stride_len: 8
+transformer_backbone: 'google/flan-t5-large' # 'google/flan-t5-base' 'google/flan-t5-large'
+add_positional_embedding: False
+set_input_mask: True # True by default 
+head_dropout: 0.1
+
+
+
+# SkyCam parameters
+mirror : 'sphere'
+INPUTS_PATH : './Data/UNwarped_slice_new_train_sphere_60_60_img_overlap.h5'
+VALID_PATH : './Data/UNwarped_slice_new_test_sphere_60_60_img_overlap.h5'
+checkpoint_path : "./results/model_checkpoints"

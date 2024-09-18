@@ -57,7 +57,6 @@ class PretrainHead(nn.Module):
         x: [batch_size x n_channels x n_patches x d_model]
         output: [batch_size x n_channels x seq_len], where seq_len = n_patches * patch_len
         """
-        # x = x.transpose(2, 3)                 # [batch_size x n_channels x n_patches x d_model]
         x = self.linear(
             self.dropout(x)
         )  # [batch_size x n_channels x n_patches x patch_len]

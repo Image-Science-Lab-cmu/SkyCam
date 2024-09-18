@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+# filename: preTrain_moment.ssh
+#
+
+
+#SBATCH --gres gpu:4g.40gb:1
+#SBATCH --output=out_moment_preTrain_Img_sphere_full_img.out
+
+
+
+CUDA_LAUNCH_BLOCKING=1
+apptainer run --nv /home/apptainer_images/pytorch_23.11-py3.sif ~/anaconda3/envs/myenv/bin/python3 -u /home/ljulian/SkyCam_Final/moment/pre-train_img.py --config /home/ljulian/SkyCam_Final/moment/configs/pre-train_img_sphere.yaml --gpu_id 0 --Half_img
+
+
+#
+echo 'Your job is running on node(s):'
+echo $SLURM_JOB_NODELIST
+echo 'Cores per node:'
+echo $SLURM_TASKS_PER_NODE

@@ -22,14 +22,12 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt 
 
 
-# from dataloader import DatasetFromFolder
 from moment.utils.config import Config
 from moment.utils.utils import control_randomness, make_dir_if_not_exists, parse_config
 from moment.common import PATHS
 from momentfm.utils.masking import Masking
 from moment.utils.forecasting_metrics import sMAPELoss
 from moment.utils.optims import LinearWarmupCosineLRScheduler
-# from model import *
 from img_model import *
 import wandb
 from wandb import AlertLevel
@@ -61,17 +59,14 @@ class Pretraining():
                 weight_decay=self.args.weight_decay,
             )
 
-
         if Half_img:
-            from dataloader_half_img import DatasetFromFolder
+            from Real_learning.dataloader import DatasetFromFolder
 
         if not Half_img:
             from dataloader import DatasetFromFolder
         
         self.train_dataloader = DataLoader(DatasetFromFolder(self.args.INPUTS_PATH), batch_size=self.args.train_batch_size, shuffle=True, num_workers=1)
         self.test_dataloader =  DataLoader(DatasetFromFolder(self.args.VALID_PATH), batch_size=self.args.val_batch_size, shuffle=False, num_workers=1)
-
-
 
 
     def validation(self, curr_epoch, return_preds: bool = False):
@@ -95,22 +90,11 @@ class Pretraining():
                 input_mask = torch.ones((B, 512)).to(self.device)
                 input_mask[:, :padding_needed] = 0
 
-
                 # Mask the input (All 512 with a 25% random setting) (Try only randomly doing the 60)
                 observation_mask = self.mask_generator.generate_mask(x=inputs_ghi, input_mask=input_mask).to(self.device).long()
 
                 with torch.cuda.amp.autocast():
                     outputs = self.model(x_enc=inputs_ghi, input_mask=input_mask, mask=observation_mask, keogram=inputs)
-
-                # preds = outputs.reconstruction
-
-                # average the channel bc we only want 1 GHI
-                # preds = torch.mean(outputs.reconstruction, 1).unsqueeze(1)
-                # preds = preds[:,:,padding_needed:]
-                # only select the 1st channel bc we only want 1 GHI
-                # preds = outputs.reconstruction[:,0,padding_needed:].unsqueeze(1)
-                # preds = preds.half()
-                
 
                 # We only care about the non-padded parts (We only care about the GHI so get the first index)
                 inputs_un_padded = inputs_ghi[:,:, padding_needed:]#.unsqueeze(1)
@@ -127,7 +111,6 @@ class Pretraining():
                 loss = masked_loss.nansum() / (observed_mask.nansum() + 1e-7)
 
                 losses.append(loss.item())
-
 
                 # plotting recosntruction plots here
                 if kk < 10:
@@ -161,8 +144,6 @@ class Pretraining():
                     "validation_loss": average_loss
                 }
             )
-
-
 
         self.model.train()
         return average_loss
@@ -240,7 +221,6 @@ class Pretraining():
                 torch.save(checkpoint, f)
 
 
-
     def train(self):
         self.run_name = self.logger.name
         path = os.path.join(self.args.checkpoint_path, self.run_name)
@@ -276,7 +256,6 @@ class Pretraining():
 
                 input_mask = torch.ones((B, 512)).to(self.device)
                 input_mask[:, :padding_needed] = 0
-                # inputs_ghi = inputs_ghi.half()
 
         
                 # Mask the input (All 512 with a 25% random setting) (Try only randomly doing the 60)
@@ -284,17 +263,6 @@ class Pretraining():
 
                 with torch.cuda.amp.autocast():
                     outputs = self.model(x_enc=inputs_ghi, input_mask=input_mask, mask=observation_mask, keogram=inputs)
-
-                # preds = outputs.reconstruction
-                # print(preds.shape)
-                # sys.exit()
-                # average the channel bc we only want 1 GHI
-                # preds = torch.mean(outputs.reconstruction, 1).unsqueeze(1)
-                # preds = preds[:,:,padding_needed:]
-                # only select the 1st channel bc we only want 1 GHI (might be better)
-                # preds = outputs.reconstruction[:,0,padding_needed:].unsqueeze(1)
-                # preds = preds.half()
-                
 
 
                 # We only care about the non-padded parts (We only care about the GHI so get the first index)
@@ -311,7 +279,6 @@ class Pretraining():
                 masked_loss = observed_mask * recon_loss
                 loss = masked_loss.nansum() / (observed_mask.nansum() + 1e-7)
                 
-                # print(loss.item())
 
                 self.logger.log(
                     {
@@ -352,8 +319,6 @@ class Pretraining():
 
 
 
-
-
 def pretrain(config_path: str = "configs/pretraining/pretrain.yaml", default_config_path: str = "configs/default.yaml", gpu_id: int = 0, Half_img: bool = False) -> None:
     config = Config( config_file_path=config_path, default_config_file_path=default_config_path).parse()
 
@@ -361,7 +326,6 @@ def pretrain(config_path: str = "configs/pretraining/pretrain.yaml", default_con
 
 
     config["device"] = gpu_id if torch.cuda.is_available() else "cpu"
-    # config["checkpoint_path"] = PATHS.CHECKPOINTS_DIR
     args = parse_config(config)
     make_dir_if_not_exists(config["checkpoint_path"])
 

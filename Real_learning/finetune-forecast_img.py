@@ -131,7 +131,7 @@ class FineTuneForecast():
         torch.cuda.set_device(self.device)
 
         if Half_img:
-            from dataloader_half_img import DatasetFromFolder
+            from Real_learning.dataloader import DatasetFromFolder
 
         if not Half_img:
             from dataloader import DatasetFromFolder
