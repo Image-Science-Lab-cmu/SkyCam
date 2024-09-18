@@ -3,3 +3,5 @@ wandb
 matplotlib
 python-dotenv
 scipy
+torchvision
+scikit-learn
