@@ -49,6 +49,8 @@ Learning based GHI prediction using real datatset.
 conda create --name SkyCam python=3.11
 # Activate environment
 conda activate SkyCam
+# install pip packages
+pip install -r requirements.txt
 # Install MOMENT package
 pip install momentfm
 
