@@ -50,10 +50,11 @@ https://drive.google.com/file/d/1isKNY5XVNk4QWHxRe_YRVTW78CZUo6gb/view?usp=shari
 
 # Create the conda environment in python 3.11
 conda create --name SkyCam python=3.11
-# Install MOMENT package
-pip install momentfm
 # Activate environment
 conda activate SkyCam
+# Install MOMENT package
+pip install momentfm
+
 ```
 Run the associated files
 ```shell
