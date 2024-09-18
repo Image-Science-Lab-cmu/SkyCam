@@ -70,6 +70,6 @@ drop_last : False
 
 # SkyCam parameters
 mirror : 'sphere'
-INPUTS_PATH : './Data/UNwarped_slice_new_train_sphere_60_60_img_overlap.h5'
-VALID_PATH : './Data/UNwarped_slice_new_test_sphere_60_60_img_overlap.h5'
+INPUTS_PATH : '../Data/UNwarped_slice_new_train_sphere_60_60_img_overlap.h5'
+VALID_PATH : '../Data/UNwarped_slice_new_test_sphere_60_60_img_overlap.h5'
 checkpoint_path : "./results/model_checkpoints"

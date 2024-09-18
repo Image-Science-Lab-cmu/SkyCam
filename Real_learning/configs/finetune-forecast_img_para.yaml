@@ -57,6 +57,6 @@ head_dropout: 0.1
 
 # SkyCam parameters
 mirror : 'para'
-INPUTS_PATH : './Data/UNwarped_slice_new_train_para_60_60_img_overlap.h5'
-VALID_PATH : './Data/UNwarped_slice_new_test_para_60_60_img_overlap.h5'
+INPUTS_PATH : '../Data/UNwarped_slice_new_train_para_60_60_img_overlap.h5'
+VALID_PATH : '../Data/UNwarped_slice_new_test_para_60_60_img_overlap.h5'
 checkpoint_path : "./results/model_checkpoints"
