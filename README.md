@@ -50,7 +50,7 @@ pip install --upgrade --no-cache-dir gdown
 unzip Simulated_Data.zip 
 ```
 
-```
+
 Run the associated files
 ```shell
 # 1. Train Hyperboloidal
