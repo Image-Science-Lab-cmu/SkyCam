@@ -127,7 +127,7 @@ for epoch in tqdm(range(EPOCHS), position = 0, leave = True):
     print("===> Epoch[{}]({}/{}): Loss: {:.8f}".format(epoch + 1, i + 1, len(trainLoader), epoch_loss))
 
     if epoch % 10 == 0:
-        os.makedirs(f'./saved_models/{mirror}', exist_ok=True)
+        os.makedirs(f'./saved_models/{mirror}/model_iterations/', exist_ok=True)
         PATH =  './saved_models/{}/model_iterations/{}_Iteration'.format(mirror, mirror) + str(epoch) + '.pt'
         torch.save(model, PATH)
         print('Saved model iteration ' +  str(epoch) + ' to -> ' + PATH)
