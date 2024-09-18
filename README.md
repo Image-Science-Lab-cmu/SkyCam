@@ -34,10 +34,36 @@ NL_occ_pred.m
 ## Simulated Learning
 Learning based occlusion prediction using simulated dataset.
 ```shell
-# Installation using using anaconda package management 
-conda env create -f environment.yml
-conda activate SkyNet
+# Create the conda environment in python 3.11
+conda create --name SkyCam python=3.11
+# Activate environment
+conda activate SkyCam
+# install pip packages
 pip install -r requirements.txt
+
+# Download the data
+pip install gdown
+gdown 19C9jIVl-TyUyya9hPbCQU6zPKXtDYwUQ
+# If you run into an inssue requesting permission, update gdown first, then re-run the above command:
+pip install --upgrade --no-cache-dir gdown
+# Unzip
+unzip Simulated_Data.zip 
+```
+
+```
+Run the associated files
+```shell
+# 1. Train Hyperboloidal
+~/anaconda3/envs/SkyCam/bin/python3 -u ./train.py --mirror hyper
+
+# 2. Train Hemispherical
+~/anaconda3/envs/SkyCam/bin/python3 -u ./train.py --mirror sphere
+
+# 3. Test Hyperboloidal
+~/anaconda3/envs/SkyCam/bin/python3 -u ./test.py --mirror hyper
+
+# 4. Test Hemispherical
+~/anaconda3/envs/SkyCam/bin/python3 -u ./test.py --mirror sphere
 ```
 
 ## Real Learning
