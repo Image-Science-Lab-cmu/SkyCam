@@ -27,10 +27,8 @@
 ## Simulated Non-learning
 Non-learning based occlusion prediction using simulated dataset.
 ```shell
-# Installation using using anaconda package management 
-conda env create -f environment.yml
-conda activate SkyNet
-pip install -r requirements.txt
+# This code is in MATLAB. Running this files creates plots for the hemispherical and hyperboloidal mirror.
+NL_occ_pred.
 ```
 
 ## Simulated Learning
