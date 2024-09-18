@@ -24,14 +24,14 @@
 
 
 # Code - Getting Startetd
-## Simulated Non-learning
+## Simulated Non-learning (./Simulated_non_learning)
 Non-learning based occlusion prediction using simulated dataset.
 ```shell
 # This code is in MATLAB. Running this files creates plots for the hemispherical and hyperboloidal mirror.
 NL_occ_pred.m
 ```
 
-## Simulated Learning
+## Simulated Learning (./Simulated_learning)
 Learning based occlusion prediction using simulated dataset.
 ```shell
 # Create the conda environment in python 3.11
@@ -66,7 +66,7 @@ Run the associated files
 ~/anaconda3/envs/SkyCam/bin/python3 -u ./test.py --mirror sphere
 ```
 
-## Real Learning
+## Real Learning (./Real_learning)
 Learning based GHI prediction using real datatset.
 ```shell
 # Create the conda environment in python 3.11
