@@ -38,6 +38,8 @@ Learning based occlusion prediction using simulated dataset.
 conda create --name SkyCam python=3.11
 # Activate environment
 conda activate SkyCam
+# Install MOMENT package
+pip install momentfm
 # install pip packages
 pip install -r requirements.txt
 
