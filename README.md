@@ -28,7 +28,7 @@
 Non-learning based occlusion prediction using simulated dataset.
 ```shell
 # This code is in MATLAB. Running this files creates plots for the hemispherical and hyperboloidal mirror.
-NL_occ_pred.
+NL_occ_pred.m
 ```
 
 ## Simulated Learning
