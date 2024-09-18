@@ -12,7 +12,6 @@ from typing import Optional
 
 import torch
 from torch.autograd import Variable
-from torchvision import transforms
 import torch.cuda.amp
 from torch import optim
 from torch.utils.data import DataLoader
