@@ -95,13 +95,13 @@ Run the associated files
 ~/anaconda3/envs/SkyCam/bin/python3 -u ./pre-train_img.py --config ./configs/pre-train_img_para.yaml --gpu_id 0 --Half_img
 
 # 2. Pre-Train Hemispherical
-~/anaconda3/envs/myenv/bin/python3 -u ./pre-train_img.py --config ./configs/pre-train_img_sphere.yaml --gpu_id 0 --Half_img
+~/anaconda3/envs/SkyCam/bin/python3 -u ./pre-train_img.py --config ./configs/pre-train_img_sphere.yaml --gpu_id 0 --Half_img
 
 # 3. Fine-Tune Hyperboloidal
-~/anaconda3/envs/myenv/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_para.yaml --Half_img
+~/anaconda3/envs/SkyCam/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_para.yaml --Half_img
 
 # 4. Fine-Tune Hyperboloidal
-~/anaconda3/envs/myenv/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_sphere.yaml --Half_img
+~/anaconda3/envs/SkyCam/bin/python3 -u ./finetune-forecast_img.py --gpu_id 0 --forecast_horizon 60 --config ./configs/finetune-forecast_img_sphere.yaml --Half_img
 ```
 * After Pre-Training, the results will be saved in the './results' folder with the run name given by wandb.
 * To fine-tune using that pre-trained run, in the config file "./config/finetune-*" change the value for "pretraining_run_name" to the run name which is based on the name given by wandb.
