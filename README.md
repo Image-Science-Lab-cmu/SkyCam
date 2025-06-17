@@ -12,8 +12,7 @@
 
 # 
 <h4 align="center">
-  [<a href="https://google.com" target="_blank">Paper&nbsp</a>]
-  [<a href="https://google.com" target="_blank">Supplementary&nbsp</a>]
+  [<a href="https://arxiv.org/abs/2409.12016" target="_blank">Paper&nbsp</a>]
   [<a href="https://drive.google.com/drive/folders/1RECMaobYrSYNmIRyL72Pahb0GvX4aCm3?usp=drive_link" target="_blank"><b>Data&nbsp (Updated Daily) </b></a>]
 </h4>
 
