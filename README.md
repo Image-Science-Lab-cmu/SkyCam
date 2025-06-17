@@ -115,10 +115,11 @@ This project makes use of the MOMENT:
 If you use this project in your research please cite:
 ```
 @INPROCEEDINGS{,
-  author={},
-  booktitle={}, 
-  title={}, 
-  year={},
+  author={Julian, Leron K. and Lee, Haejoon and Kar, Soummya and Sankaranarayanan, Aswin C.},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
+  title={Computational Imaging for Long-Term Prediction of Solar Irradiance}, 
+  year={2025},
+  pages={1-12},
   }
 ```
 
