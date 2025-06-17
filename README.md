@@ -114,7 +114,7 @@ This project makes use of the MOMENT:
 # Citation
 If you use this project in your research please cite:
 ```
-@INPROCEEDINGS{,
+@ARTICLE{10908514,
   author={Julian, Leron K. and Lee, Haejoon and Kar, Soummya and Sankaranarayanan, Aswin C.},
   journal={IEEE Transactions on Pattern Analysis and Machine Intelligence}, 
   title={Computational Imaging for Long-Term Prediction of Solar Irradiance}, 
