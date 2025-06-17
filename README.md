@@ -4,7 +4,7 @@
   <b>
     Authors:  
     <a href="https://leronjulian.github.io/" target="_blank">Leron Julian</a>, 
-    <a href="https://www.linkedin.com/in/haejoon-lee-462019251" target="_blank">Haejoon Lee</a>,
+    <a href="https://haejoonlee.com/" target="_blank">Haejoon Lee</a>,
     <a href="https://users.ece.cmu.edu/~soummyak/" target="_blank">Soummya Kar</a>,
     <a href="http://imagesci.ece.cmu.edu/" target="_blank">Aswin Sankaranarayanan</a>
   </b> 
